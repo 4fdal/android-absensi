@@ -27,6 +27,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String url = "http://10.17.0.4/fpro_v2/APIcoc/?Req=DAPOK";
     private EditText nip ;
     private Button submit ;
 
@@ -40,16 +41,16 @@ public class MainActivity extends AppCompatActivity {
         nip = findViewById(R.id.txt_nip);
         submit = findViewById(R.id.btn_submit);
 
-//        submit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                linkIntentAbsenHandler("1701081017");
 //                requestHandler();
-//            }
-//        });
+            }
+        });
     }
 
     private void requestHandler(){
-        final String url = "http://10.17.0.4/fpro_v2/APIcoc/?Req=DAPOK";
         new RequestURL(getApplicationContext(), new RequestURL.MyRequest() {
             @Override
             public int getMethod() {
