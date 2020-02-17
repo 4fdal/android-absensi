@@ -29,17 +29,144 @@
             android:fontFamily="sans-serif-condensed-light"
             android:background="@drawable/btn_style"
             android:text="AMBIL ABSEN"
+            android:textColor="@color/colorBlack"
             android:id="@+id/btn_absen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <ScrollView
+        <LinearLayout
+            android:orientation="vertical"
             android:background="@drawable/input_text_style"
             android:layout_marginTop="10dp"
+            android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-        </ScrollView>
+            <TableLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textStyle="bold"
+                        android:text="NIP KAMU "
+                        />
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/txt_nip_kamu"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="NIP KAMU"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:textStyle="bold"
+                            android:text="WAKTU ACARA "
+                            />
+                        <TextView
+                            android:textColor="@color/colorBlack"
+                            android:id="@+id/txt_waktu_acara"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:text="WAKTU ACARA"
+                            />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textStyle="bold"
+                        android:text="NAMA ACARA"
+                        />
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/txt_nama_acara"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="NAMA ACARA"
+                        />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:text="STATUS"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textStyle="bold"
+                        android:text="WAKTU ABSENSI"
+                        />
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/txt_waktu_absensi"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text=" WAKTU ABSENSI"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textStyle="bold"
+                        android:text="STATUS ABSENSI "
+                        />
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/txt_status_absensi"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text=" STATUS ACARA"
+                        />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="KETERANGAN"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:id="@+id/txt_desk_absensi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="KETERANGAN ACARA"
+                />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

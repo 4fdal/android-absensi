@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String url = "http://10.17.0.4/fpro_v2/APIcoc/?Req=DAPOK";
+    private String base_url = "http://10.17.0.4/fpro_v2/APIcoc/" ;
     private EditText nip ;
     private Button submit ;
 
@@ -44,13 +44,13 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linkIntentAbsenHandler("1701081017");
-//                requestHandler();
+                requestHandler();
             }
         });
     }
 
     private void requestHandler(){
+        final String url = base_url+"?Req=DAPOK";
         new RequestURL(getApplicationContext(), new RequestURL.MyRequest() {
             @Override
             public int getMethod() {
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray data = new JSONArray(response.toString());
                     if(!isNullJSONArray(data)){
                         JSONObject firstDataPegawai = data.getJSONObject(0);
+                        Log.d("DATA", firstDataPegawai.toString());
                         String nip = firstDataPegawai.getString("NIP");
                         String imei = getMyImei();
                         if(checkMyImeiInDapok(firstDataPegawai)){
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void regitserImeiHandler(final String nip, final String imei){
-        final String urlUpdate = "http://10.17.0.4/fpro_v2/APIcoc/?Req=UPDATE";
+        final String urlUpdate = base_url+"?Req=UPDATE";
         new RequestURL(getApplicationContext(), new RequestURL.MyRequest() {
             @Override
             public int getMethod() {
@@ -131,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void onCheckImeiInDapokHandler(){
         final String myImei = getMyImei();
-        final String urlFindImei = "http://10.17.0.4/fpro_v2/APIcoc/?Req=FINDIMEI";
+        final String urlFindImei = base_url+"?Req=FINDIMEI";
         new RequestURL(getApplicationContext(), new RequestURL.MyRequest() {
             @Override
             public int getMethod() {
@@ -201,4 +202,5 @@ public class MainActivity extends AppCompatActivity {
         onCheckImeiInDapokHandler();
         super.onRestart();
     }
+
 }

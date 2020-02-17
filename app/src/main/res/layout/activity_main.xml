@@ -37,6 +37,7 @@
             android:fontFamily="sans-serif-condensed-light"
             android:background="@drawable/input_text_style"
             android:id="@+id/txt_nip"
+            android:textColor="@color/colorBlack"
             android:shadowColor="@color/colorBlack"
             android:outlineSpotShadowColor="@color/colorBlack"
             android:padding="15dp"
