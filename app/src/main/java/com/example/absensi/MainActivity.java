@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             linkIntentAbsenHandler(nip);
                         }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "MAAF NIP KAMI TIDAK TERDAFTAR SILAHKAN HUBUNGI STI", Toast.LENGTH_LONG).show();
                     }
 
                 } catch (JSONException e) {
