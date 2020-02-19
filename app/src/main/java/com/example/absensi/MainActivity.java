@@ -81,7 +81,11 @@ public class MainActivity extends AppCompatActivity {
                             regitserImeiHandler(nip, imei);
                             linkIntentAbsenHandler(nip);
                         } else {
-                            linkIntentAbsenHandler(nip);
+                            if(firstDataPegawai.getString("IMEI").equalsIgnoreCase(imei)){
+                                linkIntentAbsenHandler(nip);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "MAAF NIP KAMU TELAH TRDAFTAR SEBELUMNYA", Toast.LENGTH_LONG).show();
+                            }
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "MAAF NIP KAMI TIDAK TERDAFTAR SILAHKAN HUBUNGI STI", Toast.LENGTH_LONG).show();
