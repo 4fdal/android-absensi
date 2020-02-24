@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -24,10 +25,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Map;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String base_url = "http://10.17.0.4/fpro_v2/APIcoc/" ;
+//    private String base_url = "http://10.17.0.4/fpro_v2/APIcoc/" ;
+    private String base_url = "http://sumbar.pln.co.id:24220/fpro_v2/APIcoc/" ;
     private EditText nip ;
     private Button submit ;
 
@@ -195,12 +198,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getMyImei(){
-        int REQUEST_CODE = 101 ;
-        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_CODE);
-        }
-        return telephonyManager.getDeviceId();
+//        int REQUEST_CODE = 101 ;
+//        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+//        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_CODE);
+//            return null;
+//        }
+        String deviceId = android.provider.Settings.Secure.getString(getApplicationContext().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+//        Toast.makeText(getApplicationContext(), deviceId , Toast.LENGTH_LONG).show();
+//        Log.d("ID : ", deviceId);
+        return  deviceId ;
     }
 
     @Override
